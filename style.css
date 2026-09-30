@@ -1,3 +1,4 @@
+/*nav parts*/
 nav {
   background-color: rgb(199, 18, 18);
   display: flex;
@@ -30,15 +31,19 @@ nav ul {
   margin: 0 0 0 auto;
   padding: 0;
   list-style: none;
+  font-family: 'Crimson Text', serif;
+  font-size: 1.2rem;
+  font-weight: 1000;
+  line-height: 1.2;
+}
+
+nav ul a:hover {
+  color: #fff;
 }
 
 nav a {
   display: block;
   text-decoration: none;
-   font-family: "Crimson Text", serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: larger;
 }
 .navbar-nav {
   margin-right: 100px;
@@ -47,6 +52,21 @@ nav a {
   margin-left: 100px;
 }
 
-nav span{
-     font-family: "Isometra", serif;
+nav span {
+  font-family: 'Isometra', serif;
+}
+
+.nav-link {
+  color: white !important;
+  font-weight: 600;
+  margin: 0 8px;
+  transition: 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ffd21f !important;
+}
+
+.nav-link.active {
+  color: #ffd21f !important;
 }
