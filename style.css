@@ -169,15 +169,12 @@ main {
 
 /*feature foods nko*/
 
-
-
-
 .feature-card {
   display: flex;
   align-items: center;
   gap: 1.25rem;
   max-width: fit-content;
-  
+
   padding: 1rem;
   background: #fff;
   border-radius: 18px;
@@ -194,6 +191,22 @@ main {
   flex-shrink: 0;
 }
 
+
+.feature-title {
+  font-size: 20px;
+  font-weight: 700;
+  font-style: italic;
+}
 .feature-card-body {
   flex: 1;
+}
+fcard{
+  align-items: center;
+}
+
+fcard .h1 {
+  display: block;
+  width: 100%;
+  text-align: center;
+
 }
