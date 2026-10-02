@@ -45,9 +45,11 @@ nav a {
   display: block;
   text-decoration: none;
 }
+
 .navbar-nav {
   margin-right: 100px;
 }
+
 .navbar-brand {
   margin-left: 100px;
 }
@@ -82,10 +84,12 @@ main {
 }
 
 .carousel-item img {
-  height: 72vh;
-  min-height: 420px;
-  object-fit: cover;
   display: block;
+  width: auto;
+  height: auto;
+  max-width: none;
+  margin-inline: auto;
+  object-fit: contain;
 }
 
 /*card sa ubus*/
@@ -157,29 +161,29 @@ main {
 
 /*feature foods nko*/
 
-.flex-container{
+.flex-container {
   box-sizing: border-box;
   max-width: 2200px;
   border: 1px solid rgb(211, 200, 200);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
   border-radius: 5px;
   padding: 40px;
   margin: 30px auto 50px;
-
 }
 
-.card-body{
+.card-body {
   width: 100%;
   border: none;
   border-radius: 20px;
   overflow: hidden;
 }
-.card:hover{
+
+.card:hover {
   transform: translateY(-8px);
   box-shadow: 0 15px 35px rgba(255, 0, 0, 0.2);
 }
 
-.btn{
+.btn {
   background-color: rgb(199, 18, 18);
   color: white;
   border: none;
@@ -189,7 +193,7 @@ main {
   cursor: pointer;
 }
 
-.btn:hover{
+.btn:hover {
   background-color: rgb(238, 238, 238);
   color: rgb(255, 0, 0);
   border: 1px solid rgb(199, 18, 18);
@@ -199,7 +203,129 @@ main {
   cursor: pointer;
 }
 
+.flex-container h1 {
+  font-family: 'Lilita One', sans-serif;
+  color: rgb(0, 0, 0);
+}
 
+/* ...existing code... */
 
+.food-slider {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.75rem 0.5rem 1rem;
+  scroll-behavior: smooth;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+  scrollbar-color: #f42d2d transparent;
+  -ms-overflow-style: auto;
+  -webkit-overflow-scrolling: touch;
+}
 
+.food-slider::-webkit-scrollbar {
+  height: 8px;
+}
 
+.food-slider::-webkit-scrollbar-thumb {
+  background: #f42d2d;
+  border-radius: 999px;
+}
+
+.food-slider > .food-item-card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+.carousel-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.food-item-card {
+  width: 10rem;
+  min-width: 10rem;
+  flex: 0 0 10rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+
+.food-item-card .card-img-top {
+  height: 140px;
+  object-fit: cover;
+}
+
+.food-item-card .card-body {
+  padding: 0.9rem 0.8rem 1rem;
+}
+
+.food-item-card .card-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2f210f;
+  text-align: center;
+}
+
+.food-slider-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1rem auto 2rem;
+  width: fit-content;
+}
+
+.food-slider-btn {
+  align-items: center;
+  justify-content: center;
+  color: #f22a2a;
+  border-radius: 20%;
+  border: 1px solid #f22a2a;
+  width: 42px;
+  height: 42px;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.food-slider-btn:hover {
+  background: #f22a2a;
+  color: #fff;
+}
+
+.food-slider-btn:active {
+  transform: translateY(0);
+}
+
+.food-slider-btn:focus-visible {
+  outline: 2px solid rgba(242, 138, 42, 0.4);
+  outline-offset: 2px;
+}
+
+.food-slider-btn[aria-label='Scroll right'] {
+  margin: 0 auto;
+}
+
+#foodCarousel .food-item-card {
+  box-sizing: border-box;
+  flex: 0 0 220px;
+  width: 220px;
+  height: 280px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+#foodCarousel .food-item-card > img {
+  width: 100%;
+  height: 210px !important;
+  flex: 0 0 210px;
+  object-fit: contain;
+}
+
+#foodCarousel .food-item-card .card-body {
+  flex: 1;
+}
